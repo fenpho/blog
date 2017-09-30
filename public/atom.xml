@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Fenpho</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://fenpho.github.io/"/>
+  <updated>2017-09-30T10:24:42.748Z</updated>
+  <id>https://fenpho.github.io/</id>
+  
+  <author>
+    <name>fenpho</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用hexo搭建个人博客并部署到GitHub</title>
+    <link href="https://fenpho.github.io/2017/09/30/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%88%B0GitHub/"/>
+    <id>https://fenpho.github.io/2017/09/30/使用hexo搭建个人博客并部署到GitHub/</id>
+    <published>2017-09-30T10:06:41.000Z</published>
+    <updated>2017-09-30T10:24:42.748Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1、什么是-Hexo？"><a href="#1、什么是-Hexo？" class="headerlink" title="1、什么是 Hexo？"></a>1、什么是 Hexo？</h3><p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="external">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p><h3 id="2、准备工作"><a href="#2、准备工作" class="headerlink" title="2、准备工作"></a>2、准备工作</h3><h4 id="2-1-安装Git"><a href="#2-1-安装Git" class="headerlink" title="2.1 安装Git"></a>2.1 安装Git</h4><blockquote><p><strong>Mac 用户</strong>您在编译时可能会遇到问题，请先到 App Store 安装 Xcode，Xcode 完成后，启动并进入 <strong>Preferences -&gt; Download -&gt; Command Line Tools -&gt; Install</strong> 安装命令行工具。</p></blockquote><p><a href="https://hexo.io/zh-cn/docs/#安装-Git" target="_blank" rel="external"></a>安装 Git<br>Windows：下载并安装 <a href="https://git-scm.com/download/win" target="_blank" rel="external">git</a>.<br>Mac：使用 <a href="http://mxcl.github.com/homebrew/" target="_blank" rel="external">Homebrew</a>, <a href="http://www.macports.org/" target="_blank" rel="external">MacPorts</a> ：<code>brew install git</code> 或下载 <a href="http://sourceforge.net/projects/git-osx-installer/" target="_blank" rel="external">安装程序</a> 安装。<br>Linux (Ubuntu, Debian)：<code>sudo apt-get install git-core</code><br>Linux (Fedora, Red Hat, CentOS)：<code>sudo yum install git-core</code></p><blockquote><p><strong>Windows 用户</strong>由于众所周知的原因，从上面的链接下载git for windows最好挂上一个代理，否则下载速度十分缓慢。也可以参考<a href="https://github.com/waylau/git-for-win" target="_blank" rel="external">这个页面</a>，收录了存储于百度云的下载地址。</p></blockquote><h4 id="2-2安装-Node-js"><a href="#2-2安装-Node-js" class="headerlink" title="2.2安装 Node.js"></a>2.2安装 Node.js</h4><p>安装 Node.js 的最佳方式是使用 <a href="https://github.com/creationix/nvm" target="_blank" rel="external">nvm</a>。<br>cURL:<br><code>$ curl https://raw.github.com/creationix/nvm/master/install.sh | sh</code><br>Wget:<br><code>$ wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh</code><br>安装完成后，重启终端并执行下列命令即可安装 Node.js。<br><code>$ nvm install stable</code></p><p>或者您也可以下载 <a href="http://nodejs.org/" target="_blank" rel="external">安装程序</a> 来安装。</p><blockquote><p><strong>Windows 用户</strong><br>对于windows用户来说，建议使用安装程序进行安装。安装时，请勾选<strong>Add to PATH</strong>选项。另外，您也可以使用<strong>Git Bash</strong>，这是git for windows自带的一组程序，提供了Linux风格的shell，在该环境下，您可以直接用上面提到的命令来安装Node.js。打开它的方法很简单，在任意位置单击右键，选择“Git Bash Here”即可。由于Hexo的很多操作都涉及到命令行，您可以考虑始终使用<strong>Git Bash</strong>来进行操作。</p></blockquote><h3 id="3、安装hexo"><a href="#3、安装hexo" class="headerlink" title="3、安装hexo"></a>3、安装hexo</h3><p>执行以下命令：<br><code>$ npm install -g hexo-cli</code><br>安装 Hexo 完成后，请执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo init &lt;folder&gt;</div><div class="line">$ cd &lt;folder&gt;</div><div class="line">$ npm install</div></pre></td></tr></table></figure></p><p>新建完成后，指定文件夹的目录如下：<br>├── _config.yml<br>├── package.json<br>├── scaffolds<br>├── source<br> | ├── _drafts<br> | └── _posts<br>└── themes<br>接下来要做的就是修改配置文件了，在根目录下找到文件：_config.yml<br>安装自己的需要进行修改，一般修改下网站标题，作者就可以了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"># Site</div><div class="line">title: Fenpho  //网站标题</div><div class="line">subtitle: //网站副标题</div><div class="line">description://网站描述</div><div class="line">author: fenpho//网站作者</div><div class="line">language: zh-CN//语言</div><div class="line">timezone://时区</div><div class="line"></div><div class="line"># URL</div><div class="line">and root as &apos;/child/&apos;</div><div class="line">url: https://fenpho.github.io/ //网站链接</div><div class="line">root: /  //网站根目录</div><div class="line">permalink: :year/:month/:day/:title/ //时间格式</div></pre></td></tr></table></figure></p><p>具体的修改方法可以参考官网：<a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="external">Hexo</a></p><h3 id="4、本地预览"><a href="#4、本地预览" class="headerlink" title="4、本地预览"></a>4、本地预览</h3><ol><li>生成静态文件<br><code>$ hexo generate  //也可以使用缩写 : $ hexo g</code></li><li>启动服务器<br>默认情况下，访问网址为：<a href="http://localhost:4000/。" target="_blank" rel="external">http://localhost:4000/。</a><br><code>$ hexo server</code><br>运行网上面的命令后，打开浏览器输入<a href="http://localhost:4000/即可看到页面了，有木有很激动" target="_blank" rel="external">http://localhost:4000/即可看到页面了，有木有很激动</a><h3 id="5、选取主题"><a href="#5、选取主题" class="headerlink" title="5、选取主题"></a>5、选取主题</h3>接下来你需要做进一步的网站美化工作，到<a href="https://hexo.io/themes/" target="_blank" rel="external">官网</a>去选取一个喜欢的主题吧！我采用了一个叫做<a href="https://github.com/SuperKieran/TKL" target="_blank" rel="external">TKL</a>的主题：<br><img src="1.png" alt="我的博客截图"><br>确定需要使用的主体之后，打开主题的官网下载安装主题即可：</li><li>右键点击根目录，选择git bash<br><img src="2.png" alt=""></li><li>运行如下命令（去主题的github页面找类似下面的命令）<br><code>$ git clone https://github.com/SuperKieran/TKL.git themes/tkl</code><br>命令中的后面的tkl为存储的目录名字，可以随便修改</li><li><p>更新主题相关文件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd themes/cafe</div><div class="line">git pull</div></pre></td></tr></table></figure></li><li><p>使用主题<br>修改根目录下的博客配置文件 <code>_config.yml</code> 主题属性 theme 为 <code>cafe</code>.</p></li><li>配置主题，这个需要根据不同主题的说明来配置，也可以不配置</li></ol><p>好了，主题安装好了，此时需要使用如下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo clean &amp;&amp; hexo g</div><div class="line">hexo server</div></pre></td></tr></table></figure></p><p>完成后刷新页面看一下吧</p><h3 id="7、添加文章"><a href="#7、添加文章" class="headerlink" title="7、添加文章"></a>7、添加文章</h3><p>创建一条博文，运行下面的命令，或者直接新建一个Markdown文件，非命令行新建文件需要手动添加文章头部（注意目录source/_posts）<br> <code>hexo new &quot;your-post-name&quot;</code><br>如果想要在新建的同时生成对应的文件夹，用于存放文档的资源文件，如图片，音视频等：将配置文件中的post_asset_folder的值从false改为true即可<br><code>post_asset_folder: true</code></p><h3 id="8、文章分类"><a href="#8、文章分类" class="headerlink" title="8、文章分类"></a>8、文章分类</h3><ol><li><p>在根目录下scaffolds/post.md中，添加一行categories:（同理可应用在page.md和photo.md）</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: &#123;&#123; title &#125;&#125;</div><div class="line">date: &#123;&#123; date &#125;&#125;</div><div class="line">categories:</div><div class="line">---</div></pre></td></tr></table></figure></li><li><p>在文章的开头配置</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">layout: post</div><div class="line">title: 标题</div><div class="line">date: 2017-05-26 09:00</div><div class="line">author: &quot;Fenpho&quot;</div><div class="line">categories:</div><div class="line">- 目录名字 </div><div class="line">tags:</div><div class="line">- 标签1</div><div class="line">- 标签2</div><div class="line">---</div></pre></td></tr></table></figure></li><li><p>第三步：配置博客首页归档展示样式。修改主题的配置文件themes目录下对应的主题下面的_config.yml中: </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># 博客首页展示文本/访问路径/自定义归档名称</div><div class="line">menu:</div><div class="line">  home: /</div><div class="line">  essay: /categories/随笔     </div><div class="line">  write: /categories/写作     </div><div class="line">  about: /about</div></pre></td></tr></table></figure></li></ol><h3 id="9、添加文章置顶功能"><a href="#9、添加文章置顶功能" class="headerlink" title="9、添加文章置顶功能"></a>9、添加文章置顶功能</h3><p>原理：在Hexo生成首页HTML时，将top值高的文章排在前面，达到置顶功能。修改Hexo文件夹下的node_modules/hexo-generator-index/lib/generator.js，在生成文章之前进行文章top值排序。<br>需添加的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">posts.data = posts.data.sort(function(a, b) &#123;</div><div class="line">if(a.top &amp;&amp; b.top) &#123; // 两篇文章top都有定义</div><div class="line">  if(a.top == b.top) return b.date - a.date; // 若top值一样则按照文章日期降序排</div><div class="line">  else return b.top - a.top; // 否则按照top值降序排</div><div class="line">&#125;</div><div class="line">else if(a.top &amp;&amp; !b.top) &#123; </div><div class="line">// 以下是只有一篇文章top有定义，那么将有top的排在前面</div><div class="line">  return -1;</div><div class="line">&#125;</div><div class="line">else if(!a.top &amp;&amp; b.top) &#123;</div><div class="line">  return 1;</div><div class="line">&#125;</div><div class="line">else return b.date - a.date; // 都没定义按照文章日期降序排</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p><p>其中涉及Javascript的比较函数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cmp(var a, var b) &#123;</div><div class="line">return a - b; // 升序，降序的话就 b - a</div><div class="line">&#125;</div></pre></td></tr></table></figure></p><p>修改完成后，只需要在需要置顶的文章上面加上top值，将会根据top值大小来选择置顶顺序top值越大越靠前。需要注意的是，这个文件不是主题的一部分，也不是Git管理的，备份的时候比较容易忽略。<br>以下是最终的generator.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&apos;use strict&apos;;</div><div class="line">var pagination = require(&apos;hexo-pagination&apos;);</div><div class="line">module.exports = function(locals)&#123;</div><div class="line">  var config = this.config;</div><div class="line">  var posts = locals.posts;</div><div class="line">    posts.data = posts.data.sort(function(a, b) &#123;</div><div class="line">        if(a.top &amp;&amp; b.top) &#123;</div><div class="line">            if(a.top == b.top) return b.date - a.date;</div><div class="line">            else return b.top - a.top;</div><div class="line">        &#125;</div><div class="line">        else if(a.top &amp;&amp; !b.top) &#123;</div><div class="line">            return -1;</div><div class="line">        &#125;</div><div class="line">        else if(!a.top &amp;&amp; b.top) &#123;</div><div class="line">            return 1;</div><div class="line">        &#125;</div><div class="line">        else return b.date - a.date;</div><div class="line">    &#125;);</div><div class="line">  var paginationDir = config.pagination_dir || &apos;page&apos;;</div><div class="line">  return pagination(&apos;&apos;, posts, &#123;</div><div class="line">    perPage: config.index_generator.per_page,</div><div class="line">    layout: [&apos;index&apos;, &apos;archive&apos;],</div><div class="line">    format: paginationDir + &apos;/%d/&apos;,</div><div class="line">    data: &#123;</div><div class="line">      __index: true</div><div class="line">    &#125;</div><div class="line">  &#125;);</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p><h3 id="10、部署到GitHub"><a href="#10、部署到GitHub" class="headerlink" title="10、部署到GitHub"></a>10、部署到GitHub</h3><h4 id="10-1-在-GitHub-上的操作"><a href="#10-1-在-GitHub-上的操作" class="headerlink" title="10.1 在 GitHub 上的操作"></a>10.1 在 GitHub 上的操作</h4><ol><li><p>新建一个 Repository<br>在 Repository name 下填写 yourname.github.io,Description (optional) 下填写一些简单的描述（不写也没有关系），如图所示：<br><img src="3.png" alt=""></p></li><li><p>创建成功之后，进入仓库的设置（点击setting）界面如下图所示：<br><img src="4.png" alt=""><br>找到pages选项，选择master branch作为主页<br><img src="5.png" alt="image.png"></p></li></ol><p>简单两步 yourname.github.io 这个域名就配置成功了。</p><h3 id="10-2、本地操作"><a href="#10-2、本地操作" class="headerlink" title="10.2、本地操作"></a>10.2、本地操作</h3><ol><li>为 Hexo 安装 Git 插件<br>安装 hexo-deployer-git，否则会报 ERROR Deployer not found: git 的错误。<br><code>npm install hexo-deployer-git --save</code></li></ol><p>修改你的 _config.yml 配置文件，在结尾处加上如下内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># Deployment</div><div class="line">## Docs: https://hexo.io/docs/deployment.html</div><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: git@github.com:fenpho/fenpho.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure></p><p>注意repo中的地址为你自己新建的仓库的路径</p><ol><li>生成静态文件和部署：<br><code>hexo g &amp; d</code></li></ol><p>最后出现如下提示就代表成功啦！<br>INFO Deploy done: git<br><img src="6.png" alt=""></p><p><strong>the end！</strong></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;1、什么是-Hexo？&quot;&gt;&lt;a href=&quot;#1、什么是-Hexo？&quot; class=&quot;headerlink&quot; title=&quot;1、什么是 Hexo？&quot;&gt;&lt;/a&gt;1、什么是 Hexo？&lt;/h3&gt;&lt;p&gt;Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 &lt;a h
+      
+    
+    </summary>
+    
+      <category term="Git &amp;&amp; GitHub" scheme="https://fenpho.github.io/categories/Git-GitHub/"/>
+    
+    
+      <category term="Git" scheme="https://fenpho.github.io/tags/Git/"/>
+    
+      <category term="GitHub" scheme="https://fenpho.github.io/tags/GitHub/"/>
+    
+      <category term="hexo" scheme="https://fenpho.github.io/tags/hexo/"/>
+    
+      <category term="个人博客" scheme="https://fenpho.github.io/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>醉翁亭记</title>
+    <link href="https://fenpho.github.io/2017/09/29/%E9%86%89%E7%BF%81%E4%BA%AD%E8%AE%B0/"/>
+    <id>https://fenpho.github.io/2017/09/29/醉翁亭记/</id>
+    <published>2017-09-29T08:42:59.000Z</published>
+    <updated>2017-09-30T08:02:46.529Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>环滁皆山也。其西南诸峰，林壑尤美，望之蔚然而深秀者，琅琊也。山行六七里，渐闻水声潺潺而泻出于两峰之间者，酿泉也。峰回路转，有亭翼然临于泉上者，醉翁亭也。作亭者谁？山之僧智仙也。名之者谁？太守自谓也。太守与客来饮于此，饮少辄醉，而年又最高，故自号曰醉翁也。醉翁之意不在酒，在乎山水之间也。山水之乐，得之心而寓之酒也。<br><br><br>若夫日出而林霏开，云归而岩穴暝，晦明变化者，山间之朝暮也。野芳发而幽香，佳木秀而繁阴，风霜高洁，水落而石出者，山间之四时也。朝而往，暮而归，四时之景不同，而乐亦无穷也。<br><br><br>至于负者歌于途，行者休于树，前者呼，后者应，伛偻提携，往来而不绝者，滁人游也。临溪而渔，溪深而鱼肥。酿泉为酒，泉香而酒洌；山肴野蔌，杂然而前陈者，太守宴也。宴酣之乐，非丝非竹，射者中，弈者胜，觥筹交错，起坐而喧哗者，众宾欢也。苍颜白发，颓然乎其间者，太守醉也。<br><br><br>已而夕阳在山，人影散乱，太守归而宾客从也。树林阴翳，鸣声上下，游人去而禽鸟乐也。然而禽鸟知山林之乐，而不知人之乐；人知从太守游而乐，而不知太守之乐其乐也。醉能同其乐，醒能述以文者，太守也。太守谓谁？庐陵欧阳修也。</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;环滁皆山也。其西南诸峰，林壑尤美，望之蔚然而深秀者，琅琊也。山行六七里，渐闻水声潺潺而泻出于两峰之间者，酿泉也。峰回路转，有亭翼然临于泉上者，醉翁亭也。作亭者谁？山之僧智仙也。名之者谁？太守自谓也。太守与客来饮于此，饮少辄醉，而年又最高，故自号曰醉
+      
+    
+    </summary>
+    
+      <category term="诗词" scheme="https://fenpho.github.io/categories/%E8%AF%97%E8%AF%8D/"/>
+    
+    
+      <category term="古诗" scheme="https://fenpho.github.io/tags/%E5%8F%A4%E8%AF%97/"/>
+    
+      <category term="欧阳修" scheme="https://fenpho.github.io/tags/%E6%AC%A7%E9%98%B3%E4%BF%AE/"/>
+    
+      <category term="醉翁亭记" scheme="https://fenpho.github.io/tags/%E9%86%89%E7%BF%81%E4%BA%AD%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git for windows 的默认工作路径（HOME）的设置以及Git与GitHub之间的SSH加密协议</title>
+    <link href="https://fenpho.github.io/2017/05/26/git%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/"/>
+    <id>https://fenpho.github.io/2017/05/26/git安装及配置/</id>
+    <published>2017-05-26T01:00:00.000Z</published>
+    <updated>2017-09-30T08:10:06.351Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1、安装及配置默认路径"><a href="#1、安装及配置默认路径" class="headerlink" title="1、安装及配置默认路径"></a>1、安装及配置默认路径</h3><p>Windows中从GitHub上面：<a href="https://git-for-windows.github.io/" target="_blank" rel="external">地址</a> 下载安装好git后（双击，改一下需要的安装路径，一路确定就好了），安装过程可以参考<a href="(http://www.liaoxuefeng.com/">廖雪峰的Git教程</a>。默认的HOME和~路径一般都是C:\Users\用户名，每次得用命令切换到常用的Repository下，此操作重复而没有意义。更重要的是，若使用SSH连接GitHub，其配置文件比如.ssh也保存在C盘中，不利于备份。打开Git安装位置\etc\profile文件，找到：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># normalize HOME to unix pathHOME=&quot;$(cd &quot;$HOME&quot; ; pwd)&quot;export PATH=&quot;$HOME/bin:$PATH&quot;</div></pre></td></tr></table></figure></p><p>增加两行，修改后结果如下（如果没有则在末尾插入新的内容）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># normalize HOME to unix pathHOME=&quot;你想要修改的HOME路径&quot;HOME=&quot;$(cd &quot;$HOME&quot; ; pwd)&quot;cdexport PATH=&quot;$HOME/bin:$PATH&quot;</div></pre></td></tr></table></figure></p><p>重启Git bash，就会自动进入新修改后的HOME路径了。<br>为了方便起见可以顺手加上一个变量名用于自定义项目目录，此做法不但便于路径跳转，也可以在启动git时自动进入项目目录。方法极为简单，只需在profile文件中加入:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># set Project Path proj=&quot;你的项目文件目录&quot; cd $proj</div></pre></td></tr></table></figure></p><h3 id="2、Git与GitHub之间的SSH协议："><a href="#2、Git与GitHub之间的SSH协议：" class="headerlink" title="2、Git与GitHub之间的SSH协议："></a>2、Git与GitHub之间的SSH协议：</h3><p>运行下面的指令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C &quot;xxx@xxx.com&quot;</div></pre></td></tr></table></figure></p><p>即可看到下图：<br><img src="1.gif" alt=""><br>紫色部分要一模一样，前面的为自定义的路径，要与你设置的HOME路径相同，这样就能够自定义你的SSH公钥和私钥的保存位置了。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;1、安装及配置默认路径&quot;&gt;&lt;a href=&quot;#1、安装及配置默认路径&quot; class=&quot;headerlink&quot; title=&quot;1、安装及配置默认路径&quot;&gt;&lt;/a&gt;1、安装及配置默认路径&lt;/h3&gt;&lt;p&gt;Windows中从GitHub上面：&lt;a href=&quot;https:/
+      
+    
+    </summary>
+    
+      <category term="Git &amp;&amp; GitHub" scheme="https://fenpho.github.io/categories/Git-GitHub/"/>
+    
+    
+      <category term="Git" scheme="https://fenpho.github.io/tags/Git/"/>
+    
+      <category term="SSH" scheme="https://fenpho.github.io/tags/SSH/"/>
+    
+      <category term="GitHub" scheme="https://fenpho.github.io/tags/GitHub/"/>
+    
+  </entry>
+  
+</feed>

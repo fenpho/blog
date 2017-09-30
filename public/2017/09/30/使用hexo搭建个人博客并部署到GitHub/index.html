@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <title>使用hexo搭建个人博客并部署到GitHub | Fenpho</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Fenpho">
+    <meta name="author" content="fenpho">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.png" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="Fenpho" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="atom.xml">
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">首页</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">归档</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">作品<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">努力制作中。。。</a></li>
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">努力制作中。。。</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">分类<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/Git-GitHub/" class="animsition-link">Git &amp;&amp; GitHub<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/诗词/" class="animsition-link">诗词<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">友情链接<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="https://fenpho.github.io/" class="animsition-link">fenpho</a></li>
+                    
+                    <li><a href="https://fenpho.github.io/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            <li><a href="/about" class="animsition-link" title="about">关于</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">Fenpho</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2017-09-30T10:06:41.000Z" itemprop="datePublished">
+          2017-09-30
+      </time>
+    
+    
+    | 
+    <a href='/tags/Git/'>Git</a>,
+    
+    <a href='/tags/GitHub/'>GitHub</a>,
+    
+    <a href='/tags/hexo/'>hexo</a>,
+    
+    <a href='/tags/个人博客/'>个人博客</a>
+    
+    
+</span>
+                <h1>使用hexo搭建个人博客并部署到GitHub</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h3 id="1、什么是-Hexo？"><a href="#1、什么是-Hexo？" class="headerlink" title="1、什么是 Hexo？"></a>1、什么是 Hexo？</h3><p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="external">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+<h3 id="2、准备工作"><a href="#2、准备工作" class="headerlink" title="2、准备工作"></a>2、准备工作</h3><h4 id="2-1-安装Git"><a href="#2-1-安装Git" class="headerlink" title="2.1 安装Git"></a>2.1 安装Git</h4><blockquote>
+<p><strong>Mac 用户</strong>您在编译时可能会遇到问题，请先到 App Store 安装 Xcode，Xcode 完成后，启动并进入 <strong>Preferences -&gt; Download -&gt; Command Line Tools -&gt; Install</strong> 安装命令行工具。</p>
+</blockquote>
+<p><a href="https://hexo.io/zh-cn/docs/#安装-Git" target="_blank" rel="external"></a>安装 Git<br>Windows：下载并安装 <a href="https://git-scm.com/download/win" target="_blank" rel="external">git</a>.<br>Mac：使用 <a href="http://mxcl.github.com/homebrew/" target="_blank" rel="external">Homebrew</a>, <a href="http://www.macports.org/" target="_blank" rel="external">MacPorts</a> ：<code>brew install git</code> 或下载 <a href="http://sourceforge.net/projects/git-osx-installer/" target="_blank" rel="external">安装程序</a> 安装。<br>Linux (Ubuntu, Debian)：<code>sudo apt-get install git-core</code><br>Linux (Fedora, Red Hat, CentOS)：<code>sudo yum install git-core</code></p>
+<blockquote>
+<p><strong>Windows 用户</strong>由于众所周知的原因，从上面的链接下载git for windows最好挂上一个代理，否则下载速度十分缓慢。也可以参考<a href="https://github.com/waylau/git-for-win" target="_blank" rel="external">这个页面</a>，收录了存储于百度云的下载地址。</p>
+</blockquote>
+<h4 id="2-2安装-Node-js"><a href="#2-2安装-Node-js" class="headerlink" title="2.2安装 Node.js"></a>2.2安装 Node.js</h4><p>安装 Node.js 的最佳方式是使用 <a href="https://github.com/creationix/nvm" target="_blank" rel="external">nvm</a>。<br>cURL:<br><code>$ curl https://raw.github.com/creationix/nvm/master/install.sh | sh</code><br>Wget:<br><code>$ wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh</code><br>安装完成后，重启终端并执行下列命令即可安装 Node.js。<br><code>$ nvm install stable</code></p>
+<p>或者您也可以下载 <a href="http://nodejs.org/" target="_blank" rel="external">安装程序</a> 来安装。</p>
+<blockquote>
+<p><strong>Windows 用户</strong><br>对于windows用户来说，建议使用安装程序进行安装。安装时，请勾选<strong>Add to PATH</strong>选项。另外，您也可以使用<strong>Git Bash</strong>，这是git for windows自带的一组程序，提供了Linux风格的shell，在该环境下，您可以直接用上面提到的命令来安装Node.js。打开它的方法很简单，在任意位置单击右键，选择“Git Bash Here”即可。由于Hexo的很多操作都涉及到命令行，您可以考虑始终使用<strong>Git Bash</strong>来进行操作。</p>
+</blockquote>
+<h3 id="3、安装hexo"><a href="#3、安装hexo" class="headerlink" title="3、安装hexo"></a>3、安装hexo</h3><p>执行以下命令：<br><code>$ npm install -g hexo-cli</code><br>安装 Hexo 完成后，请执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo init &lt;folder&gt;</div><div class="line">$ cd &lt;folder&gt;</div><div class="line">$ npm install</div></pre></td></tr></table></figure></p>
+<p>新建完成后，指定文件夹的目录如下：<br>├── _config.yml<br>├── package.json<br>├── scaffolds<br>├── source<br> | ├── _drafts<br> | └── _posts<br>└── themes<br>接下来要做的就是修改配置文件了，在根目录下找到文件：_config.yml<br>安装自己的需要进行修改，一般修改下网站标题，作者就可以了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"># Site</div><div class="line">title: Fenpho  //网站标题</div><div class="line">subtitle: //网站副标题</div><div class="line">description://网站描述</div><div class="line">author: fenpho//网站作者</div><div class="line">language: zh-CN//语言</div><div class="line">timezone://时区</div><div class="line"></div><div class="line"># URL</div><div class="line">and root as &apos;/child/&apos;</div><div class="line">url: https://fenpho.github.io/ //网站链接</div><div class="line">root: /  //网站根目录</div><div class="line">permalink: :year/:month/:day/:title/ //时间格式</div></pre></td></tr></table></figure></p>
+<p>具体的修改方法可以参考官网：<a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="external">Hexo</a></p>
+<h3 id="4、本地预览"><a href="#4、本地预览" class="headerlink" title="4、本地预览"></a>4、本地预览</h3><ol>
+<li>生成静态文件<br><code>$ hexo generate  //也可以使用缩写 : $ hexo g</code></li>
+<li>启动服务器<br>默认情况下，访问网址为：<a href="http://localhost:4000/。" target="_blank" rel="external">http://localhost:4000/。</a><br><code>$ hexo server</code><br>运行网上面的命令后，打开浏览器输入<a href="http://localhost:4000/即可看到页面了，有木有很激动" target="_blank" rel="external">http://localhost:4000/即可看到页面了，有木有很激动</a><h3 id="5、选取主题"><a href="#5、选取主题" class="headerlink" title="5、选取主题"></a>5、选取主题</h3>接下来你需要做进一步的网站美化工作，到<a href="https://hexo.io/themes/" target="_blank" rel="external">官网</a>去选取一个喜欢的主题吧！我采用了一个叫做<a href="https://github.com/SuperKieran/TKL" target="_blank" rel="external">TKL</a>的主题：<br><img src="1.png" alt="我的博客截图"><br>确定需要使用的主体之后，打开主题的官网下载安装主题即可：</li>
+<li>右键点击根目录，选择git bash<br><img src="2.png" alt=""></li>
+<li>运行如下命令（去主题的github页面找类似下面的命令）<br><code>$ git clone https://github.com/SuperKieran/TKL.git themes/tkl</code><br>命令中的后面的tkl为存储的目录名字，可以随便修改</li>
+<li><p>更新主题相关文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd themes/cafe</div><div class="line">git pull</div></pre></td></tr></table></figure>
+</li>
+<li><p>使用主题<br>修改根目录下的博客配置文件 <code>_config.yml</code> 主题属性 theme 为 <code>cafe</code>.</p>
+</li>
+<li>配置主题，这个需要根据不同主题的说明来配置，也可以不配置</li>
+</ol>
+<p>好了，主题安装好了，此时需要使用如下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo clean &amp;&amp; hexo g</div><div class="line">hexo server</div></pre></td></tr></table></figure></p>
+<p>完成后刷新页面看一下吧</p>
+<h3 id="7、添加文章"><a href="#7、添加文章" class="headerlink" title="7、添加文章"></a>7、添加文章</h3><p>创建一条博文，运行下面的命令，或者直接新建一个Markdown文件，非命令行新建文件需要手动添加文章头部（注意目录source/_posts）<br> <code>hexo new &quot;your-post-name&quot;</code><br>如果想要在新建的同时生成对应的文件夹，用于存放文档的资源文件，如图片，音视频等：将配置文件中的post_asset_folder的值从false改为true即可<br><code>post_asset_folder: true</code></p>
+<h3 id="8、文章分类"><a href="#8、文章分类" class="headerlink" title="8、文章分类"></a>8、文章分类</h3><ol>
+<li><p>在根目录下scaffolds/post.md中，添加一行categories:（同理可应用在page.md和photo.md）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: &#123;&#123; title &#125;&#125;</div><div class="line">date: &#123;&#123; date &#125;&#125;</div><div class="line">categories:</div><div class="line">---</div></pre></td></tr></table></figure>
+</li>
+<li><p>在文章的开头配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">layout: post</div><div class="line">title: 标题</div><div class="line">date: 2017-05-26 09:00</div><div class="line">author: &quot;Fenpho&quot;</div><div class="line">categories:</div><div class="line">	- 目录名字 </div><div class="line">tags:</div><div class="line">	- 标签1</div><div class="line">	- 标签2</div><div class="line">---</div></pre></td></tr></table></figure>
+</li>
+<li><p>第三步：配置博客首页归档展示样式。修改主题的配置文件themes目录下对应的主题下面的_config.yml中: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># 博客首页展示文本/访问路径/自定义归档名称</div><div class="line">menu:</div><div class="line">  home: /</div><div class="line">  essay: /categories/随笔     </div><div class="line">  write: /categories/写作     </div><div class="line">  about: /about</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="9、添加文章置顶功能"><a href="#9、添加文章置顶功能" class="headerlink" title="9、添加文章置顶功能"></a>9、添加文章置顶功能</h3><p>原理：在Hexo生成首页HTML时，将top值高的文章排在前面，达到置顶功能。修改Hexo文件夹下的node_modules/hexo-generator-index/lib/generator.js，在生成文章之前进行文章top值排序。<br>需添加的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">posts.data = posts.data.sort(function(a, b) &#123;</div><div class="line">if(a.top &amp;&amp; b.top) &#123; // 两篇文章top都有定义</div><div class="line">  if(a.top == b.top) return b.date - a.date; // 若top值一样则按照文章日期降序排</div><div class="line">  else return b.top - a.top; // 否则按照top值降序排</div><div class="line">&#125;</div><div class="line">else if(a.top &amp;&amp; !b.top) &#123; </div><div class="line">// 以下是只有一篇文章top有定义，那么将有top的排在前面</div><div class="line">  return -1;</div><div class="line">&#125;</div><div class="line">else if(!a.top &amp;&amp; b.top) &#123;</div><div class="line">  return 1;</div><div class="line">&#125;</div><div class="line">else return b.date - a.date; // 都没定义按照文章日期降序排</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>其中涉及Javascript的比较函数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cmp(var a, var b) &#123;</div><div class="line">return a - b; // 升序，降序的话就 b - a</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>修改完成后，只需要在需要置顶的文章上面加上top值，将会根据top值大小来选择置顶顺序top值越大越靠前。需要注意的是，这个文件不是主题的一部分，也不是Git管理的，备份的时候比较容易忽略。<br>以下是最终的generator.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&apos;use strict&apos;;</div><div class="line">var pagination = require(&apos;hexo-pagination&apos;);</div><div class="line">module.exports = function(locals)&#123;</div><div class="line">  var config = this.config;</div><div class="line">  var posts = locals.posts;</div><div class="line">    posts.data = posts.data.sort(function(a, b) &#123;</div><div class="line">        if(a.top &amp;&amp; b.top) &#123;</div><div class="line">            if(a.top == b.top) return b.date - a.date;</div><div class="line">            else return b.top - a.top;</div><div class="line">        &#125;</div><div class="line">        else if(a.top &amp;&amp; !b.top) &#123;</div><div class="line">            return -1;</div><div class="line">        &#125;</div><div class="line">        else if(!a.top &amp;&amp; b.top) &#123;</div><div class="line">            return 1;</div><div class="line">        &#125;</div><div class="line">        else return b.date - a.date;</div><div class="line">    &#125;);</div><div class="line">  var paginationDir = config.pagination_dir || &apos;page&apos;;</div><div class="line">  return pagination(&apos;&apos;, posts, &#123;</div><div class="line">    perPage: config.index_generator.per_page,</div><div class="line">    layout: [&apos;index&apos;, &apos;archive&apos;],</div><div class="line">    format: paginationDir + &apos;/%d/&apos;,</div><div class="line">    data: &#123;</div><div class="line">      __index: true</div><div class="line">    &#125;</div><div class="line">  &#125;);</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<h3 id="10、部署到GitHub"><a href="#10、部署到GitHub" class="headerlink" title="10、部署到GitHub"></a>10、部署到GitHub</h3><h4 id="10-1-在-GitHub-上的操作"><a href="#10-1-在-GitHub-上的操作" class="headerlink" title="10.1 在 GitHub 上的操作"></a>10.1 在 GitHub 上的操作</h4><ol>
+<li><p>新建一个 Repository<br>在 Repository name 下填写 yourname.github.io,Description (optional) 下填写一些简单的描述（不写也没有关系），如图所示：<br><img src="3.png" alt=""></p>
+</li>
+<li><p>创建成功之后，进入仓库的设置（点击setting）界面如下图所示：<br><img src="4.png" alt=""><br>找到pages选项，选择master branch作为主页<br><img src="5.png" alt="image.png"></p>
+</li>
+</ol>
+<p>简单两步 yourname.github.io 这个域名就配置成功了。</p>
+<h3 id="10-2、本地操作"><a href="#10-2、本地操作" class="headerlink" title="10.2、本地操作"></a>10.2、本地操作</h3><ol>
+<li>为 Hexo 安装 Git 插件<br>安装 hexo-deployer-git，否则会报 ERROR Deployer not found: git 的错误。<br><code>npm install hexo-deployer-git --save</code></li>
+</ol>
+<p>修改你的 _config.yml 配置文件，在结尾处加上如下内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># Deployment</div><div class="line">## Docs: https://hexo.io/docs/deployment.html</div><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: git@github.com:fenpho/fenpho.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure></p>
+<p>注意repo中的地址为你自己新建的仓库的路径</p>
+<ol>
+<li>生成静态文件和部署：<br><code>hexo g &amp; d</code></li>
+</ol>
+<p>最后出现如下提示就代表成功啦！<br>INFO Deploy done: git<br><img src="6.png" alt=""></p>
+<p><strong>the end！</strong></p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="pagination" role="pagination">
+    
+    
+    <a class="pull-right" href="/2017/09/29/醉翁亭记/">
+        醉翁亭记 →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo">
+
+
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By fenpho. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//fenpho.github.io" style="color: #767D84">fenpho</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+<!-- Initiate flexslider plugin -->
+<script type="text/javascript">
+    $(document).ready(function($) {
+      (function(){
+        var getCss = function(path) {
+          var head = document.getElementsByTagName('head')[0];
+          link = document.createElement('link');
+          link.href = path;
+          link.rel = 'stylesheet';
+          link.type = 'text/css';
+          head.appendChild(link);
+        };
+        getCss('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+        getCss('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
+      })();
+      $('.flexslider').flexslider({
+        animation: "fade",
+        prevText: "",
+        nextText: "",
+        directionNav: true
+      });
+    });
+</script>
+
+</body>
+</html>
